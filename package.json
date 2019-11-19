@@ -1,0 +1,28 @@
+{
+  "name": "mailing_awslib",
+  "version": "1.0.0",
+  "description": "AllexJS lib that handles the AWS SES mechanics",
+  "main": "index.js",
+  "scripts": {
+    "test": "allex-mocha"
+  },
+  "dependencies": {
+    "aws-sdk": "2.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mailing-libs/aws.git"
+  },
+  "keywords": [
+    "ecosystem:AllexJS",
+    "mailing",
+    "aws",
+    "lib"
+  ],
+  "author": "Andrija Petrovic <andrija.hers@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mailing-libs/aws/issues"
+  },
+  "homepage": "https://github.com/mailing-libs/aws#readme"
+}
