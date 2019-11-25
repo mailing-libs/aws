@@ -88,6 +88,14 @@ function createBounceAnalyzer (execlib) {
     } catch (e) {
       throw new lib.Error('MESSAGE_NOT_JSON_PARSEABLE', 'Message was not in JSON format');
     }
+    if (!m.mail) {
+      console.log('What is the structure of Message?', m);
+      throw new lib.Error('UNSUPPORTED_BOUNCE_MESSAGE_STRUCTURE', 'The Message structure is not supported');
+    }
+    if (!(m.bounce && m.bounce.timestamp)) {
+      console.log('What is the structure of Message?', m);
+      throw new lib.Error('UNSUPPORTED_BOUNCE_MESSAGE_STRUCTURE', 'The Message structure is not supported');
+    }
     ret =  {
       sendingsystemid: m.mail.messageId,
       sendingsystemnotified: new Date(m.bounce.timestamp).valueOf(),

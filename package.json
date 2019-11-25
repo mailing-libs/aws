@@ -1,6 +1,6 @@
 {
   "name": "mailing_awslib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AllexJS lib that handles the AWS SES mechanics",
   "main": "index.js",
   "scripts": {

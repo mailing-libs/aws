@@ -38,6 +38,14 @@ function createComplaintAnalyzer (execlib) {
     if ('Complaint' !== complaint.notificationType) {
       throw new lib.Error('WRONG_NOTIFICATION_TYPE', complaint.notificationType+ ' <> Complaint');
     }
+    if (!complaint.mail) {
+      console.log('What is the structure of Complaint?', m);
+      throw new lib.Error('UNSUPPORTED_COMPLAINT_MESSAGE_STRUCTURE', 'The Message structure is not supported');
+    }
+    if (!(complaint.complaint && complaint.complaint.timestamp)) {
+      console.log('What is the structure of Complaint?', m);
+      throw new lib.Error('UNSUPPORTED_COMPLAINT_MESSAGE_STRUCTURE', 'The Message structure is not supported');
+    }
     ret =  {
       sendingsystemid: complaint.mail.messageId,
       sendingsystemnotified: new Date(complaint.complaint.timestamp).valueOf(),
